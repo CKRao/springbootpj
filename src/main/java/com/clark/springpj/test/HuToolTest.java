@@ -6,6 +6,8 @@ import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.CharUtil;
 import cn.hutool.core.util.CharsetUtil;
 
+import java.util.Date;
+
 /**
  * @author ClarkRao
  * @date 2019/8/8 15:39
@@ -51,5 +53,15 @@ public class HuToolTest {
         System.out.println(DateUtil.year(dateTime));
         System.out.println(DateUtil.month(dateTime));
         System.out.println(DateUtil.monthEnum(dateTime));
+        System.out.println(DateUtil.thisMonthEnum());
+
+        String dateStr = "2017-03-01 22:33:23";
+        Date d = DateUtil.parse(dateStr);
+        DateTime beginOfDay = DateUtil.beginOfDay(d);
+        DateTime endOfDay = DateUtil.endOfDay(d);
+        System.out.println(DateUtil.formatDateTime(beginOfDay));
+        System.out.println(DateUtil.formatDateTime(endOfDay));
+
+        System.out.println(DateUtil.ageOfNow("1995-03-25"));
     }
 }
